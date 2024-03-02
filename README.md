@@ -1,1 +1,1 @@
-# Python-Projects
+Python Projects as a Computer Science Student!
