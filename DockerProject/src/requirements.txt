@@ -1,0 +1,4 @@
+Flask
+mysqlclient
+mysql-connector-python==8.0.6
+PyYAML==5.3.1

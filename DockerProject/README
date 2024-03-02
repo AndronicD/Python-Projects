@@ -1,0 +1,21 @@
+NUME: Andronic Dragos Sebastian
+GRUPA: 342C3
+
+Structura
+-src: server.py (entry point aplicatie)
+      config.yaml (date conectare baza de date)
+      helper.py (functii pentru request-uri, realizare conexiune baza de date, validare date si generare raspuns)
+      requirements.txt 
+      wait_for_db.sh (porneste serverul)
+      Dockerfile
+      .dockerignore
+      
+      api:
+      CitiesApi: definire endpoint-uri cities
+      CountriesApi: definire endpoint-uri countries
+      TemperatureApi: definire endpoint-uri temperatures
+      
+      db:
+      create_tables.sql: script de initializare baza de date
+
+Rulare: docker compose up / docker compose -f docker-compose.yml up

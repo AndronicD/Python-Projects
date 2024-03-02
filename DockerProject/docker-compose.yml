@@ -1,0 +1,43 @@
+version: '3.5'
+
+networks:
+  network-application:
+    name: network-application
+  network-workbench:
+    name: network-workbench
+
+services:
+  application:
+    build: ./src
+    ports:
+      - "6000:6000"
+    networks:
+      - network-application
+
+  mysql-workbench:
+    depends_on:
+      - database
+    image: lscr.io/linuxserver/mysql-workbench:latest
+    container_name: mysql-workbench
+    environment:
+      - TZ=Europe/Bucharest
+    ports:
+      - 3500:3500
+    cap_add:
+      - IPC_LOCK
+    networks:
+      - network-workbench
+
+  database:
+    image: mysql:5.7.44-oracle
+    volumes:
+      - ./src/db/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    networks:
+      - network-application
+      - network-workbench
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: BD_Meteo_Info
+    ports:
+      - "10000:3306"
