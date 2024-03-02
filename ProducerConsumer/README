@@ -1,0 +1,39 @@
+Nume: Andronic Dragos Sebastian
+Grupa: 336CC
+
+producer.py: Intr-o bucla infinita obtin id-ul unui producator din marketplace
+iar pentru fiecare produs verific daca pot sa il public in lista
+de produse ale producatorului din marketplace si asteapta un timp
+de production_time, altfel asteapta un timp de republish_wait_time.
+
+consumer.py: Pentru fiecare cart obtin un id din marketplace si execut
+fiecare operatie add sau remove, incrementez valoarea current doar daca
+operatia a fost executata cu succes (altfel la operatia add asteapta un
+timp retry_wait_time), iar la final apelez metoda place_order.
+
+marketplace.py: In constructor am definit doua dictionare pentru asocierea
+dintre id_producator si produsele sale si id_cart si produsele adaugate si elemente 
+de sincronizare pentru fiecare functie. Am definit si un obiect logger pentru 
+a afisa parametrii metodelor si valorile intoarse de acestea.
+
+register_producer: incrementez valoarea producer_id si intorc valoarea.\
+
+publish: adaug o intrare in dictionarul producer_products si in cazul in
+care mai pot adauga elemente (lista nu a ajuns la numarul de elemente maxim)
+adaug element si intorc True, altfel False.
+
+new_cart: incrementez valoarea cart_id si intorc valoarea.
+
+add_to_cart: adaug o intrare in dictionarul cart_products si in cazul in
+care gasesc produsul la unul din producatori adaug produsul in cart_products
+(retin atat produsul cat si id-ul producatorului de unde a fost achizitionat)
+scot produsul din producer_products si intorc True, altfel False.
+
+remove_from_cart: scot elementul din cart_products in cazul in care acesta exista
+in cart si il adaug inapoi in lista producatorului.
+
+place_order: elimin cheia din cart_products, afisez produsele si intorc lista de 
+produse
+
+Clasa TestMarketplace: clasa unittest pentru a verifica toate metodele din 
+clasa marketplace.
