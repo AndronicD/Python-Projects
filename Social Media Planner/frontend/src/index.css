@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.HomePageButtonButton {
+  padding: 10px;
+  background-color: cyan;
+  width: 10vw;
+  border-radius: 5px;
+  margin: 10px
+}
+
+.HomePageButtonButton:hover {
+  background-color: #00aaaa;
+}
+
+.HomePageButtonButton:active {
+  background-color: #00cccc;
+}
+
+.IdentityPageDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('images/desktop-wallpaper-backgrounds-for-login-page-login-page.jpg');
+  background-size: cover;
+}
+
+.IdentityPageDiv form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.IdentityPageDiv input[type="email"], input[type="password"] {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.IdentityPageDiv input[type="button"] {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.IdentityPageDiv .button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.IdentityPageDiv .button-container .identity-link {
+  margin-top: 20px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.HomePageDiv {
+  background: linear-gradient(to bottom, #9b14d0, #1013ce);
+  margin: 0;
+  padding: 0;
+}
+
+.HomePageDiv .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.HomePageDiv .logo {
+  margin-bottom: 50px;
+}
+
+.HomePageDiv .logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.HomePageDiv .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HomePageDiv .login-btn, .signup-btn {
+  background-color: white;
+  color: #8f72ff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.HomePageDiv .login-btn:hover, .signup-btn:hover {
+  background-color: #8f72ff;
+  color: white;
+}
+
+.MainPageDiv {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+.MainPageDiv button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}

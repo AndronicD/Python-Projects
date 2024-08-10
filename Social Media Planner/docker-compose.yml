@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    volumes:
+      - ./backend:/backend
+  redis:
+    image: "redis:alpine"
+  client:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/frontend
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true

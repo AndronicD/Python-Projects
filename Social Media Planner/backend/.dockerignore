@@ -1,0 +1,4 @@
+# Exclude all files and directories that begin with "tmp"
+tmp*
+# Exclude the ".git" directory and all its contents
+.git/
